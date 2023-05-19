@@ -7,7 +7,7 @@ on:
 
 
 jobs:
-  gitHubCronTest:
+  test:
     # Name the Job
     name: Cron_test
     # Set the type of machine to run on
