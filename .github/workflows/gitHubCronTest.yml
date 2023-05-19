@@ -2,7 +2,7 @@ name: cronTest
 
 on:
   schedule:
-     - cron: '30 5 * * 1-5'
+     - cron: '30 4 * * 1-5'
      - cron: '30 16 * * 1-5'
 
 
