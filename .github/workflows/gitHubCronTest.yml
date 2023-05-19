@@ -3,8 +3,8 @@ name: cronTest
 on:
   workflow_dispatch:
   schedule:
-    - cron: '00 5 * * 1-5'
-    - cron: '00 17 * * 1-5'
+    - cron: '05 5 * * 1-5'
+    - cron: '05 17 * * 1-5'
 permissions:
   contents: read
 jobs:
@@ -21,7 +21,7 @@ jobs:
            distribution: 'zulu'
            java-version: '11'
            java-package: jdk
-    - run: java -cp javaprintHello.java
+    - run: java -cp java printHello.java
     
     - name: Build with Maven
       run: mvn clean test
