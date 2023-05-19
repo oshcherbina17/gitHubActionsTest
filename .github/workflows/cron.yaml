@@ -1,4 +1,4 @@
-name: ManualTest
+name: CronTest
 
 on:
   schedule:
@@ -7,7 +7,7 @@ on:
 
 
 jobs:
-  gitHubActionsTest:
+  gitHubCronTest:
     # Name the Job
     name: Job name test
     # Set the type of machine to run on
@@ -15,10 +15,13 @@ jobs:
 
     #https://github.com/marketplace?type=actions&query=java 
     steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-java@v1
-          with:
-                java-version: '11' 
-                java-package: jdk 
-                architecture: x64 
-        - run: java -cp java printHello.java
+             - name: Checkout code
+               uses: actions/checkout@v2
+
+             - name: Set up JDK
+               uses: actions/setup-java@v2
+               with:
+                java-version: '11'
+               
+             - name: Run file
+               run : java -cp java printHello.java
