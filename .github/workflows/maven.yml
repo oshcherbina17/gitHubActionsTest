@@ -22,7 +22,7 @@ jobs:
          distribution: 'zulu'
          java-version: '11'
          java-package: jdk 
-    - run: java -cp java .src/test/java/gitciselenium/SeleniumDemo.java
+    - run: java -cp java /src/test/java/gitciselenium/SeleniumDemo.java
     
     - name: Build with Maven
       run: mvn clean test --file pom.xml
