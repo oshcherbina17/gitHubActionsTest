@@ -10,12 +10,17 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.lang.invoke.MethodHandles;
 import java.util.concurrent.TimeUnit;
 
 public class SeleniumDemo
 {
     private WebDriver driver;
+    private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+
 
     @BeforeClass
     public void setUp()
@@ -40,7 +45,8 @@ public class SeleniumDemo
         passwordTxt.sendKeys("SuperSecretPassword!");
         WebElement submitBtn = driver.findElement(By.className("radius"));
         submitBtn.click();
-        System.out.println("Current URL is:" + driver.getCurrentUrl());
+        LOGGER.info("Current URL is:" + driver.getCurrentUrl());
+        //System.out.println("Current URL is:" + driver.getCurrentUrl());
         Assert.assertTrue(driver.getCurrentUrl().contains("secure"));
     }
 
