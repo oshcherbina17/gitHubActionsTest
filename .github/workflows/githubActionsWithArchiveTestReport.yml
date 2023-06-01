@@ -1,4 +1,4 @@
-name: githubActionsWitheArchiveTestReport
+name: githubActionsWithArchiveTestReport
 
 on:
   workflow_dispatch:
