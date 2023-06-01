@@ -26,12 +26,8 @@ jobs:
       run: mvn clean install  
       
     - name: Publish Test Results
-      uses: junit-team/junit5-github-action@v2
+      uses: EnricoMi/publish-unit-test-result-action/composite@v2
+      if: always()
       with:
-        report_paths: '**/surefire-reports/TEST-*.xml'
-
-    - name: Upload Test Artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: test-results
-        path: '**/surefire-reports'
+          files: |
+            test-results/**/*.xml
